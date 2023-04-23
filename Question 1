@@ -1,9 +1,11 @@
 Question 1. Explain what the simple List component does.
 
-The List component consists of List Items that are wrapped in a component called WrappedSingleListItem.
-Each ListItem has a state called isSelected and values for text and index, as well as an event called onClickHandler. 
-These components are memoized using memo(WrappedListComponent), which means that if the same arguments are passed, the result will be returned from memory.
-The List component uses the map() method to iterate over an array of data and calls a function for each element.
-The resulting List Items are stored in an array called items. The background color of the text gets changed based on the state of isSelected. 
-If the state is true, the text will be displayed in green else it will be displayed in red.
-
+solution:-
+A user interface (UI) component called Simple List shows a list of things in either a vertical or horizontal manner. 
+It is a frequently utilised user interface element in a lot of web and mobile applications.
+The Simple List component can be customised to incorporate additional elements like photos, checkboxes,
+or buttons in addition to the text or icons that are typically displayed for each item. 
+The list can be static or dynamic, which means that it can be filled with information from a user input or a database.
+Additionally, the Simple List component may be used with other UI elements to build more intricate user interfaces,
+including drop-down menus or navigation bars.
+Many developers and designers favour it because of its simplicity and adaptability.
