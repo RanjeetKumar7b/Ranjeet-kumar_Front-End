@@ -1,1 +1,65 @@
 
+Question 2. What problems / warnings are there with code?
+We get 5 problems and one warning in this code.
+
+Changes in the code :
+1.
+Before
+
+onClick={onClickHandler(index)}
+Using arrow function
+After correction
+
+onClick={()=>onClickHandler(index)}
+Before
+
+const [setSelectedIndex, selectedIndex] = useState();
+Initializing the selectedIndex to -1 instead of keeping it empty.
+After correction
+
+const [selectedIndex, setSelectedIndex] = useState(-1);
+Before
+
+<SingleListItem
+         onClickHandler={() => handleClick(index)}
+         text={item.text}
+         index={index}
+         isSelected={selectedIndex}
+        />
+A mismatch between the declared value of propType which is boolean and the passed value which is string creates the error here
+After correction
+
+<SingleListItem
+          key={index}
+          onClickHandler={() => handleClick(index)}
+          text={item.text}
+          isSelected={selectedIndex===index}
+        />
+Before
+
+items: PropTypes.array(PropTypes.shapeOf
+The correct function names are arrayOf() and shape().
+After correction
+
+items: PropTypes.arrayOf(PropTypes.shape
+Before
+
+WrappedListComponent.defaultProps = {
+ items: null,
+ };
+The array was not initialize that is why we are getting the error here, we can remove the error by initializing the array.
+After
+
+WrappedListComponent.defaultProps = {
+    items: [
+        {text: 'Item1', itemId:1},
+        {text: 'Item2', itemId:1},
+        {text: 'Item3', itemId:1},
+        {text: 'Item4', itemId:1},
+        {text: 'Item5', itemId:1},
+        {text: 'Item6', itemId:1},
+    ],
+  };
+The warning "React Hook useEffect has a missing dependency: 'setSelectedIndex'. Either include it or remove the dependency array"
+we get due to const [setSelectedIndex, selectedIndex] = useState(); we can remove this warning by correcting it like const [selectedIndex, setSelectedIndex] = useState(-1);
+
