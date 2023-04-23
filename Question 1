@@ -1,0 +1,9 @@
+Question 1. Explain what the simple List component does.
+
+The List component consists of List Items that are wrapped in a component called WrappedSingleListItem.
+Each ListItem has a state called isSelected and values for text and index, as well as an event called onClickHandler. 
+These components are memoized using memo(WrappedListComponent), which means that if the same arguments are passed, the result will be returned from memory.
+The List component uses the map() method to iterate over an array of data and calls a function for each element.
+The resulting List Items are stored in an array called items. The background color of the text gets changed based on the state of isSelected. 
+If the state is true, the text will be displayed in green else it will be displayed in red.
+
